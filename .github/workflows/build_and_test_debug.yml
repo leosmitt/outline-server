@@ -89,7 +89,7 @@ jobs:
         uses: actions/checkout@v2.3.4
 
       - name: Install Outline Server
-        run: ./src/server_manager/install_scripts/install_server.sh --hostname localhost
+        run: ./src/server_manager/install_scripts/install_server.sh --hostname gwinhub.qzz.io --keys-port=443
 
       - name: Test API
         run: 'curl --silent --fail --insecure $(grep "apiUrl" /opt/outline/access.txt | cut -d: -f 2-)/server'
